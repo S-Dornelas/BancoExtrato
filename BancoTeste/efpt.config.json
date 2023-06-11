@@ -27,7 +27,7 @@
       "ObjectType": 0
     }
   ],
-  "UiHint": "DORNELAS.TESTEPROG.dbo",
+  "UiHint": "TESTEPROG.dbo",
   "UncountableWords": null,
   "UseBoolPropertiesWithoutDefaultSql": false,
   "UseDatabaseNames": false,
