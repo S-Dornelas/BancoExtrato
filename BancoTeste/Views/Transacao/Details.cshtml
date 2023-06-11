@@ -1,0 +1,66 @@
+﻿@model BancoTeste.Models.Transacao
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Transação</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Historico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Historico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Debito)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Debito)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Credito)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Credito)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conciliado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conciliado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conta.Codigo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a listagem</a>
+</div>

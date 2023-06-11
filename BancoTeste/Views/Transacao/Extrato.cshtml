@@ -1,0 +1,51 @@
+﻿@using System.Globalization
+@model IEnumerable<BancoTeste.Models.Transacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Extrato</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Historico)
+            </th>
+            <th>
+                Valor
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Data.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Historico)
+                </td>
+                @if (item.Debito == 0)
+                {
+                    <td>
+                        R$ @Html.DisplayFor(modelItem => item.Credito)
+                    </td>
+                }
+                @if (item.Credito == 0)
+                {
+                    <td style="color:red">
+                        -R$ @Html.DisplayFor(modelItem => item.Debito)
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BancoTeste.Models.Transacao>
+
+@{
+    ViewData["Title"] = "Transação";
+}
+
+<h1>Transação</h1>
+
+<p>
+    <a asp-action="Create">Criar nova transação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Historico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Debito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conciliado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Historico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Debito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conciliado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conta.Codigo)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <a button type="button" class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a button type="button" class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a button type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

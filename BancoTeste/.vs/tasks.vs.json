@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-index",
+      "appliesTo": "Views/Home/index.css",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarefa-Index",
+      "appliesTo": "Views/Home/Index.cshtml",
+      "type": "launch"
+    }
+  ]
+}
